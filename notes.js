@@ -89,9 +89,9 @@ const readingNotes = (title) => {
   const notes = loadNotes();
   const titleClr = chalk.whiteBright.inverse.bold(title);
   const search = notes.find((item) => item.title === title);
-  const searchBody = chalk.blueBright(search.body);
+
   if (search) {
-    console.log(titleClr + " " + searchBody);
+    console.log(titleClr + " " + chalk.blueBright(search.body));
   } else {
     errorMessage("Unable to find");
   }
